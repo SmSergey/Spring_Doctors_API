@@ -1,0 +1,7 @@
+config:
+  jwt.header: "Authorization"
+  jwt.secret: "E79D3E9B3D33A8E8A7659E7E6965D"
+  #minutes
+  jwt.accessExpiration: 300
+  #hours
+  jwt.refreshExpiration: 2
