@@ -12,6 +12,7 @@ import com.app.web.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.val;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -40,7 +41,7 @@ public class UserService {
         return new ApiResponse()
                 .addField("accesstoken", token.getAccessToken())
                 .addField("refreshtoken", token.getRefreshToken())
-                .setStatus(200)
+                .setStatus(HttpStatus.OK.value())
                 .build();
     }
 

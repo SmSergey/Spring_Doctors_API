@@ -18,7 +18,7 @@ public class ErrorsAdvice {
         val filedError = err.getFieldErrors().get(0);
         return new ApiResponse()
                 .setMessage(filedError.getField() + " : " + filedError.getDefaultMessage())
-                .setStatus(400)
+                .setStatus(HttpStatus.BAD_REQUEST.value())
                 .build();
     }
 
@@ -26,7 +26,7 @@ public class ErrorsAdvice {
     public ResponseEntity<String> handleAuthErrors(BadCredentialsException err) {
         return new ApiResponse()
                 .setMessage(err.getMessage())
-                .setStatus(400)
+                .setStatus(HttpStatus.BAD_REQUEST.value())
                 .build();
     }
 
